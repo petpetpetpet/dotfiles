@@ -1,0 +1,18 @@
+[submodule "vim/config/bundle/vim-airline"]
+	path = vim/config/bundle/vim-airline
+	url = https://github.com/petpetpetpet/vim-airline
+[submodule "vim/config/bundle/ale"]
+	path = vim/config/bundle/ale
+	url = https://github.com/w0rp/ale
+[submodule "vim/config/bundle/nerdtree"]
+	path = vim/config/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/config/bundle/vim-airline-themes"]
+	path = vim/config/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/config/bundle/vim-gotham"]
+	path = vim/config/bundle/vim-gotham
+	url = https://github.com/whatyouhide/vim-gotham
+[submodule "vim/config/bundle/vim-sensible"]
+	path = vim/config/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible
