@@ -16,3 +16,6 @@
 [submodule "vim/config/bundle/vim-sensible"]
 	path = vim/config/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule "vim/config/bundle/badwolf"]
+	path = vim/config/bundle/badwolf
+	url = https://github.com/sjl/badwolf

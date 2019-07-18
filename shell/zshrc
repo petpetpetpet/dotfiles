@@ -13,6 +13,8 @@ export ZSH="/Users/Chris.liaw@uk.ibm.com/.oh-my-zsh"
 
 #GOTHAM_SHELL="$HOME/.config/gotham-contrib/shell/gotham.sh"
 #[[ -s $GOTHAM_SHELL ]] && source $GOTHAM_SHELL
+ZSH_THEME="robbyrussell"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

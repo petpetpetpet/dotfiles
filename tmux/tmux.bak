@@ -1,0 +1,71 @@
+
+
+
+# Try to enable 24 bit colour.
+# Even if it fails, it still appears to produce an adeqately
+# readable (albeit uglier) colour scheme.
+set -g default-terminal "xterm-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# I am used to GNU Screen, and often have to switch between
+# screen and tmux. Therefore, I like to remap some of the 
+# tmux default bindings to their screen equivalents:
+# - Ctrl+a to prefix (along with Ctrl+a a to jump to
+#   the beginning of a line.)
+# - Ctrl+a Esc to enter copy mode.
+# - Ctrl+a A to rename a window.
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+bind a send-prefix
+unbind Escape
+bind Escape copy-mode
+bind A command-prompt -I "#W" "rename-window '%%'"
+bind Escape copy-mode
+
+# Pane switching with alt + arrow.
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# vi style scrollback control
+set -g mode-keys vi
+
+# Make C-a r cause tmux to reload its conf file.
+# Was useful when modifying this file to immediately
+# see changes.
+bind r source-file $HOME/.tmux.conf
+
+
+# Command to load an external conf file. No need anymore.
+#if-shell "test -f ~/.tmux-status.conf" "source ~/.tmux-status.conf"
+
+
+############################################
+# Gotham theme.
+############################################
+set -g status-justify "left"
+set -g status "on"
+set -g status-style bg="#11151c"
+set -g message-command-style bg="#091f2e",fg="#599cab"
+#set -g status-left-length "100"
+set -g pane-active-border-style fg="#195466"
+set -g pane-border-style fg="#091f2e"
+set -g message-style bg="#091f2e",fg="#599cab"
+set -g status-left-attr "none"
+set -g status-right-attr "none"
+set -g status-right-length "100"
+setw -g window-status-fg "#195466"
+setw -g window-status-attr "none"
+setw -g window-status-activity-bg "#11151c"
+setw -g window-status-activity-attr "none"
+setw -g window-status-activity-fg "#195466"
+setw -g window-status-separator " "
+setw -g window-status-bg "#11151c"
+#set -g status-left "#[fg=#99d1ce,bg=#195466] #S #[fg=#195466,bg=#11151c,nobold,nounderscore,noitalics]"
+set -g status-left " "
+set -g status-right "#[fg=#091f2e,bg=#11151c,nobold,nounderscore,noitalics]#[fg=#599cab,bg=#091f2e] %Y-%m-%d %H:%M #[fg=#195466,bg=#091f2e,nobold,nounderscore,noitalics]#[fg=#99d1ce,bg=#195466] #h "
+setw -g window-status-format "#[fg=#599cab,bg=#091f2e] #I  #W #[bg=11151c]"
+setw -g window-status-current-format "#[fg=#99d1ce,bg=#195466] #I #[fg=#599cab,bg=#091f2e] #W #[fg=#599cab,bg=#11151c,nobold,nounderscore,noitalics]"
+

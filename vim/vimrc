@@ -1,24 +1,41 @@
+" Enable the pathogen vim plugin manager (which allows vim plugins
+" to be installed by simply dropping their repo into .vim/bundle.
 execute pathogen#infect()
 
 set laststatus=2
 set showtabline=2
 set noshowmode
 
+" Tab characters cause all sorts of pain for python people
+" (unless absolutely consistently used.) These settings expand
+" tabs into blocks of four spaces.
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" F2 will toggle the nerd tree file browser.
+" F3 toggles line numbers.
+" F4 will toggle 'paste mode' which disables auto indenting.
 map <F2> :NERDTreeToggle<CR>
-set pastetoggle=<F4>
 nmap <F3> :set invnumber<CR>
+set pastetoggle=<F4>
 
-set termguicolors
-colorscheme gotham
+" Attempt to take advantage of terminals that support
+" 24 bit colour.
+if $COLORTERM is 'truecolor'
+    " Terminals should set COLORTERM to truecolor if they support
+    " 24 bit colour.
+    set termguicolors
+    colorscheme gotham
+    let g:airline_theme='gotham'
+else
+    " Otherwise fallback to a 256 colour scheme.
+    colorscheme badwolf
+    let g:airline_theme='badwolf'
+endif
 
-" Display airline, with the gotham theme.
-set laststatus=2
-let g:airline_theme='gotham'
+" Display airline tabline.
 let g:airline#extensions#tabline#enabled = 1
 
 " Make NERDTree show hidden files.
