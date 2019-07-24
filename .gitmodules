@@ -19,3 +19,15 @@
 [submodule "vim/config/bundle/badwolf"]
 	path = vim/config/bundle/badwolf
 	url = https://github.com/sjl/badwolf
+[submodule "shell/zsh/oh-my-zsh"]
+	path = shell/zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "shell/zsh/powerlevel10k"]
+	path = shell/zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
+[submodule "shell/zsh/zsh_custom/plugins/zsh-syntax-highlighting"]
+	path = shell/zsh/zsh_custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "shell/zsh/zsh_custom/plugins/zsh-autosuggestions"]
+	path = shell/zsh/zsh_custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
