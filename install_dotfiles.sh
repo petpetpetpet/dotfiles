@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$(cd "$(dirname "$(realpath "$0")")" && pwd)
-echo "SCRIPT_DIR: $SCRIPT_DIR"
+
+DOTFILES_HOME=$SCRIPT_DIR
 
 . $SCRIPT_DIR/functions/functions.sh
 . $SCRIPT_DIR/shell/commonrc.sh
@@ -31,7 +32,7 @@ while getopts ":m" opt; do
 done
 
 # Pull down all submodules.
-git submodule update --recursive --remote
+git submodule update --init --recursive
 
 # Now install everything else.
 install_cfg shell
