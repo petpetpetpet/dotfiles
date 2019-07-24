@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles repo.
+My dotfiles repo. Should setup a useable config for both bash and zsh, with colour schemes and sane defaults for tmux, vim, screen, and mac os. 
 
 To install just run:
 
