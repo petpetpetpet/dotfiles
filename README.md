@@ -2,12 +2,17 @@
 
 My dotfiles repo.
 
-To install macos default settings and packages run
+To install just run:
+
 ```
-bash install_dotfiles.sh -m
+git clone https://github.com/petpetpetpet/dotfiles.git .dotfiles
+cd .dotfiles
+./install_dotfiles.sh
 ```
 
-To install without setting up macos run:
+NB: you don't have to clone into `.dotfiles`, you can name it anything you want.
+
+To install macos default settings and packages run
 ```
-bash install_dotfiles.sh
+./install_dotfiles.sh -m
 ```
