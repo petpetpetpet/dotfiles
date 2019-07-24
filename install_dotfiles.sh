@@ -1,7 +1,10 @@
-#!/usr/bin/bash
-. $DOTFILES_HOME/functions/functions.sh
+#!/usr/bin/env bash
 
-SCRIPT_DIR=$(get_script_dir)
+SCRIPT_DIR=$(cd "$(dirname "$(realpath "$0")")" && pwd)
+echo "SCRIPT_DIR: $SCRIPT_DIR"
+
+. $SCRIPT_DIR/functions/functions.sh
+. $SCRIPT_DIR/shell/commonrc.sh
 
 function install_cfg()
 {
@@ -26,6 +29,9 @@ while getopts ":m" opt; do
         ;;
     esac
 done
+
+# Pull down all submodules.
+git submodule update --recursive --remote
 
 # Now install everything else.
 install_cfg shell

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Some useful functions that will work in both
 # bash or zsh.
 

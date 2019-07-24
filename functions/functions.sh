@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #
 # Utility functions that can be used by all dotfiles
 # scripts.

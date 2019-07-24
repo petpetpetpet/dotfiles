@@ -1,3 +1,7 @@
+# Determine where dotfiles is installed using the real (not symbolic) location of
+# this file.
+typeset -g DOTFILES_HOME=$(cd "$(dirname "$(realpath "${(%):-%N}")")/.." && pwd)
+
 [[ -f $HOME/.commonrc ]] && source $HOME/.commonrc
 
 # Path to your oh-my-zsh installation.
