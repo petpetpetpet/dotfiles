@@ -36,7 +36,6 @@ set_pl_colours_tc() {
   # Elipsis are displayed when this occurs.
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='[%10>...>%n%>>@%m]'
 
-  typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#0a3749"
   
 }
 
@@ -95,7 +94,7 @@ set_pl_colours_256() {
 
   typeset -g POWERLEVEL9K_HISTORY_FOREGROUND=244
 
-  typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=235
+  typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=235"
 }
 
 
@@ -290,6 +289,9 @@ set_pl_colours_256() {
     if [ ! -v COLORTERM ]
     then
         typeset -g COLORTERM=
+    else
+        # zsh doesn't nearcolor this one very well, so I explicitly set it.
+        typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#0a3749"
     fi
 
     [[ $COLORTERM = *(24bit|truecolor)* ]] || zmodload zsh/nearcolor

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+# We cannot assume DOTFILES_HOME has been setup when this
+# script is being run (because this might be a completely fresh
+# environment.) Therefore, we explicitly set it here to the
+# dirtectory where this script resides. Post-install DOTFILES_HOME
+# will be set by shell/zshrc or shell/bashrc.rc.
 SCRIPT_DIR=$(cd "$(dirname "$(realpath "$0")")" && pwd)
-
 DOTFILES_HOME=$SCRIPT_DIR
 
 . $SCRIPT_DIR/functions/functions.sh
