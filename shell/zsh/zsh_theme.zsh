@@ -281,12 +281,20 @@ set_pl_colours_256() {
   # Set up xterm-256color compatible colours first.
   set_pl_colours_256
 
-
-  if [ -v COLORTERM ] && [ "$COLORTERM" = "truecolor" ]
+  if [[ ${ZSH_VERSION%.*} -ge 5.7 ]]
   then
-      # Override some of the 256 colour settings with 24-bit
-      # hex colours if the terminal supports as much.
-      set_pl_colours_tc
+    # ZSH supports both truecolour, and nearest colour emulation
+    # starting at version 5.7. If ZSH meets that version requirement,
+    # use that.
+    
+    if [ ! -v COLORTERM ]
+    then
+        typeset -g COLORTERM=
+    fi
+
+    [[ $COLORTERM = *(24bit|truecolor)* ]] || zmodload zsh/nearcolor
+    set_pl_colours_tc
+  
   fi
 }
 
