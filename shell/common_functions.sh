@@ -2,6 +2,18 @@
 # Some useful functions that will work in both
 # bash or zsh.
 
+function checkIfMac()
+{
+    unameOut="$(uname -s)"
+    retVal=0
+    if [ "${unameOut}" = "Darwin" ]
+    then
+        echo "true"
+    else
+        echo "false"
+    fi
+}
+
 # Usage: indirect_expand PATH -> $PATH
 indirect_expand () {
     env |sed -n "s/^$1=//p"

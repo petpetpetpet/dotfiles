@@ -1,17 +1,6 @@
 #!/usr/bin/bash
 . $DOTFILES_HOME/functions/functions.sh
-
-function checkIfMac()
-{
-    unameOut="$(uname -s)"
-    retVal=0
-    if [ "${unameOut}" = "Darwin" ]
-    then
-        echo "true"
-    else
-        echo "false"
-    fi
-}
+. $DOTFILES_HOME/shell/commonrc.sh
 
 function isBrewInstalled()
 {
@@ -34,7 +23,7 @@ function install_macos()
     local HASBREW=$(isBrewInstalled)
     
     MACOS_INSTALL_SCRIPT="$DOTFILES_HOME/macos/macos_defaults.sh"
-    BREW_INSTALL_SCRIPT="$DOTFILES_HOME/brew/brew_defaults.sh"
+    BREW_INSTALL_SCRIPT="$DOTFILES_HOME/macos/brew/brew_defaults.sh"
 
     check_file $MACOS_INSTALL_SCRIPT
     check_file $BREW_INSTALL_SCRIPT
@@ -62,8 +51,7 @@ function install_macos()
     fi
 }
 
-
-echo "ISMAC: $ISMAC, HASBREW: $HASBREW"
 pushd $DOTFILES_HOME
 install_macos
+popd
 

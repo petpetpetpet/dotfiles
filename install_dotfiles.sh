@@ -6,7 +6,7 @@
 # dirtectory where this script resides. Post-install DOTFILES_HOME
 # will be set by shell/zshrc or shell/bashrc.rc.
 SCRIPT_DIR=$(cd "$(dirname "$(realpath "$0")")" && pwd)
-DOTFILES_HOME=$SCRIPT_DIR
+export DOTFILES_HOME=$SCRIPT_DIR
 
 . $SCRIPT_DIR/functions/functions.sh
 . $SCRIPT_DIR/shell/commonrc.sh
@@ -43,5 +43,6 @@ install_cfg shell
 install_cfg vim
 install_cfg tmux
 install_cfg screen
+install_cfg ls
 
 log_info "Done."
