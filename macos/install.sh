@@ -1,4 +1,5 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
 . $DOTFILES_HOME/functions/functions.sh
 . $DOTFILES_HOME/shell/commonrc.sh
 

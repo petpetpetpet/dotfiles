@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Macos default preferences.
 
 

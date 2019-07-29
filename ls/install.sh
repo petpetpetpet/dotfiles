@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Set up symlinks for shell configuration files.
 
 . $DOTFILES_HOME/functions/functions.sh
