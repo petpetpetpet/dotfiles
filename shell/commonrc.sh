@@ -16,13 +16,16 @@ ISMAC=$(checkIfMac)
 if [ "$ISMAC" = "true" ]
 then
     DIRCOLORS_CMD="gdircolors"
-    LS_CMD="gls"
-    alias ls="$LS_CMD --color=auto"
+    alias ls="gls --color=auto"
 
     # Also setup mac 'ls', even though it
     # shouldn't really be used.
     export CLICOLOR=1
     export LSCOLORS="GxFxhxhxCxbxbxCxCxGxGx"
+else
+    # If this isn't a mac, then 'ls' should be GNU
+    # 'ls', so we don't need to alias 'gls'.
+    alias ls="ls --color=auto"
 fi 
 
 # Sets the LS_COLORS environment variable which controls the colours
